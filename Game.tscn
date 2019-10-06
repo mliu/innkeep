@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://classes/Ingredient.tscn" type="PackedScene" id=2]
+[ext_resource path="res://classes/Bowl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/spoon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25, 50 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Plant" parent="." instance=ExtResource( 2 )]
+position = Vector2( 943.479, 517.974 )
+
+[node name="Feather" parent="." instance=ExtResource( 2 )]
+position = Vector2( 944.253, 367.861 )
+type = 2
+
+[node name="Eye" parent="." instance=ExtResource( 2 )]
+position = Vector2( 943.479, 219.296 )
+type = 1
+
+[node name="Ashes" parent="." instance=ExtResource( 2 )]
+position = Vector2( 943.479, 73.8252 )
+type = 0
+
+[node name="Bowl" parent="." instance=ExtResource( 3 )]
+position = Vector2( 429.447, 492.897 )
+
+[node name="Spoon" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 50, 530 )
+
+[node name="Sprite" type="Sprite" parent="Spoon"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
+shape = SubResource( 1 )
