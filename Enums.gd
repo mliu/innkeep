@@ -6,3 +6,9 @@ enum Ingredients {
 	FEATHER,
 	PLANT
 }
+
+enum Recipes {
+	GOOP,
+	SALAD,
+	MYSTERY_MEAT
+}
