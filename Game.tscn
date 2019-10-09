@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://classes/Ingredient.tscn" type="PackedScene" id=2]
 [ext_resource path="res://classes/Bowl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/spoon.png" type="Texture" id=4]
 [ext_resource path="res://OrderGenerator.gd" type="Script" id=5]
+[ext_resource path="res://CustomerAnchor.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 50 )
@@ -42,9 +43,20 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
 shape = SubResource( 1 )
 
-[node name="OrderGenerator" type="Area2D" parent="."]
+[node name="OrderGenerator" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrderGenerator"]
+[node name="DayTimer" type="Timer" parent="OrderGenerator"]
+wait_time = 120.0
+autostart = true
 
-[node name="Sprite" type="Sprite" parent="OrderGenerator"]
+[node name="OrderTimer" type="Timer" parent="OrderGenerator"]
+autostart = true
+
+[node name="Anchor1" parent="." instance=ExtResource( 6 )]
+
+[node name="Anchor2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 500, 900 )
+
+[node name="Anchor3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 800, 900 )

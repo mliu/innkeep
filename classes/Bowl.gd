@@ -14,7 +14,10 @@ func add_ingredient(type):
 func mix():
 	print("Mixed " + str(ingredients))
 	ingredients = []
-	pass
+
+func dump():
+	print("Dumped " + str(ingredients))
+	ingredients = []
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

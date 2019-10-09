@@ -1,4 +1,4 @@
-class_name Recipe
+class_name Recipes
 
 const recipes = {
 	Enums.Recipes.GOOP : 
